@@ -1,0 +1,65 @@
+COMPUTATION APPLIED DO ENGINEERING - FRAME
+Nodes 	Materials	Sections 	Bars 	Type
+6	2		2		6	Frame	
+Nodes		cx		cy		cz
+N1  		0.0		0.0		0.0
+N2		0.0		4.0		0.0
+N3		0.0		8.0		0.0
+N4		9.0		0.0		0.0
+N5		6.0		4.0		0.0
+N6		6.0		8.0		0.0
+Material  		E   		nu
+M1			20.0E6		0.3
+M2			21.0E6		0.3
+Section		Tipo		A/LA/R		I/LB
+S1		Rectangular	0.50		0.50
+S2		Rectangular	0.40		0.60	
+Barra		Node_i		Node_f		Material	Section		nLP	nLD
+B12		N1		N2		M2		S1		0	0
+B23		N2		N3		M1		S1		0	0
+B45		N4		N5		M2		S1		0	0
+B56		N5		N6		M1		S1		0	0
+B25		N2		N5		M1		S2		0	1
+B36		N3		N6		M1		S2		2	3
+Forces	
+Node	Fx		Fy		MZ
+N1	0.0		0.0		0.0
+N2	0.0		0.0		25.0
+N3	0.0		0.0		0.0
+N4	0.0		0.0		0.0
+N5	10.0		0.0		0.0
+N6	0.0		0.0		0.0
+Point loads
+2
+Load	Bar	Position	Fx		Fy		M
+P1	B36	2.0		 10.0		-20.0		15.0
+P2	B36	4.0		 00.0		-30.0		 0.0
+Distributed loads
+4
+Load	Bar	Initial		Final		q_initial	q_final
+q1	B25	0.0		6.0		-10.0		-10.0
+q2	B36	0.0		2.0		 -5.0		 -5.0
+q3	B36	2.0		4.0		 -5.0		-10.0
+q4	B36	4.0		6.0		-10.0		-10.0
+Restraints	
+Node	Ux		Uy		Theta
+N1	true		true		true
+N2	false		false		false
+N3	false		false		false
+N4	true		true		false
+N5	false		false		false
+N6	false		false		false
+Displacements	
+Node	Ux		Uy		Theta
+N1	0.0		0.0		0.0
+N2	0.0		0.0		0.0
+N3	0.0		0.0		0.0
+N4	0.0	        0.0		0.0
+N5	0.0		0.0		0.0
+N6	0.0		0.0		0.0
+
+
+
+
+
+
